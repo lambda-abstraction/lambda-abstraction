@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://lambda-abstraction.github.io/lambda-abstraction/python-typehints/duck-typing/">
+        <link rel="canonical" href="https://lambda-abstraction.github.io/lambda-abstraction/python-typehints/type-variable-bounds-and-constraints/">
       
       
-        <link rel="prev" href="../builtin-types/">
+        <link rel="prev" href="../type-aliases/">
       
-      
-        <link rel="next" href="../defining-generics/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>duck-typing - lambda-abstraction</title>
+        <title>type-variable-bounds-and-constraints - lambda-abstraction</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#duck-typing" class="md-skip">
+        <a href="#type-variable-bounds-and-constraints" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              duck-typing
+              type-variable-bounds-and-constraints
             
           </span>
         </div>
@@ -327,19 +325,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../duck-typing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -348,7 +337,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -400,10 +388,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../type-variable-bounds-and-constraints/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -412,6 +409,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -460,25 +458,22 @@
   
 
 
-<h1 id="duck-typing">duck-typing</h1>
-<p>now, knowing a bit about typehints, you might want to annotate your functions
-that loop over something as expecting a <code>list</code> because thats what you usually
-called it with, but there are other types that we can loop over too, right?</p>
-<p>thats where duck typing, abstract classes and
-protocols come into play: the idea behind it is that if something acts like a
-duck, then it can be treated as a duck.</p>
-<p>regarding the loop example: you can loop
-over something if that something is "iterable", and for that there is a
-<a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable"><code>collections.abc.Iterable</code></a>
-type, that is also generic over the type of the item you'll get when iterating
-over that thing (e.g. a <code>list[int]</code> is an <code>Iterable[int]</code>), so, when you are typehinting a parameter as <code>list</code>: think,
-should it really be specially a <code>list</code>, or just an <code>Iterable</code>? or maybe a
-<a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableSequence"><code>collections.abc.MutableSequence</code></a>?
-for something dict-like this would be the
-<a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping"><code>collections.abc.Mapping</code></a>
-abstract class.</p>
-<p>i'd recommend to take a look at the types in this module if you
-want to write nice generic annotations :d</p>
+<h1 id="type-variable-bounds-and-constraints">type-variable-bounds-and-constraints</h1>
+<p>so, after <a href="../defining-generics/"><code>defining-generics</code></a> we already can define
+generic types, but sometimes you want to represent that a type variable should
+not be arbitrary, but be a subclass of some other type, or implement a protocol
+/ abc, stuff like that, for that, in <a href="https://peps.python.org/pep-0695/"><code>PEP 695 - Type Parameter
+Syntax</code></a> there's a special syntax:
+<code>[TypeVariableName: BoundType]</code> this means that the <code>TypeVariableName</code> should be
+a valid subclass of <code>BoundType</code></p>
+<p>this is very useful even for simple functions like <code>f(x: str) -&gt; str</code> that
+operate on concrete types when you take into consideration that people can
+subclass those types and you want to preserve something like "the returned type
+is same as given".</p>
+<p>what about saying that a type variable can only be one of a set of some
+predefined variants? this can be achieved by defining constraints on it, like
+so: <code>[TypeVariableName: (Variant1, ..., VariantN)]</code>. Note that atleast 2 variants are
+required.</p>
 
 
 
