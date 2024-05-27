@@ -1,0 +1,32 @@
+site_name: lambda-abstraction
+site_url: https://lambda-abstraction.github.io/lambda-abstraction
+repo_url: https://github.com/lambda-abstraction/lambda-abstraction
+nav:
+  - what is this: index.md
+  - python-typehints: 
+    - python-typehints/index.md
+theme:
+  name: material
+  palette:
+    scheme: slate
+  features:
+    - content.code.copy
+    - content.code.annotate 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
