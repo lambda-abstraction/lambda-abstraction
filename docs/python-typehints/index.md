@@ -71,3 +71,8 @@ typecheckers (like mypy and pyright) can verify that your code does work
 according to the typehints and doesn't try to access methods that dont exist on
 the type you annotated (e.g. you typehint `x` as an `int`, but try to `.split()`
 it: `int` doesnt have `split` defined, so it'd spot out this as a type error)
+
+the general rule i like to follow is to annotate types of parameters as generic
+as possible, so they can be reusable in more places, and typehint return values / attributes / values
+as strict as possible, so it is known exactly what the
+data is and what you can do with it

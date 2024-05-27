@@ -4,7 +4,8 @@ repo_url: https://github.com/lambda-abstraction/lambda-abstraction
 nav:
   - what is this: index.md
   - python-typehints: 
-    - python-typehints/index.md
+    - introduction: python-typehints/index.md
+    - builtin-types: python-typehints/builtin-types.md
 theme:
   name: material
   palette:
@@ -12,6 +13,8 @@ theme:
   features:
     - content.code.copy
     - content.code.annotate 
+  icon:
+    annotation: material/star-four-points-circle
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -25,6 +28,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
+  - attr_list
+  - md_in_html
 
 extra_javascript:
   - javascripts/mathjax.js
