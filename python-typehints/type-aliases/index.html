@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://lambda-abstraction.github.io/lambda-abstraction/python-typehints/builtin-types/">
+        <link rel="canonical" href="https://lambda-abstraction.github.io/lambda-abstraction/python-typehints/type-aliases/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../defining-generics/">
       
-      
-        <link rel="next" href="../duck-typing/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>builtin-types - lambda-abstraction</title>
+        <title>type-aliases - lambda-abstraction</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#builtin-types" class="md-skip">
+        <a href="#type-alises" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              builtin-types
+              type-aliases
             
           </span>
         </div>
@@ -306,19 +304,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../builtin-types/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -327,7 +316,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -379,10 +367,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../type-aliases/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -391,6 +388,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -439,63 +437,20 @@
   
 
 
-<h1 id="builtin-types">builtin-types</h1>
-<p>so, what types are there even? what do the usual values we use correspond to in
-types?</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># (1)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">x</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">x</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span> 
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># (2) </span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">x</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;hi!&quot;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">x</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;hi!&quot;</span> <span class="c1"># (3) </span>
+<h1 id="type-alises">type-alises</h1>
+<p>so.. sometimes, when we typehint our code, types can get a bit big and the code starts to look cluttered and its hard to write..
+wouldnt it be nice if we could define shorthands for types?</p>
+<p>and we can! using type aliases, and the <code>type</code> keyword-statement introduced with <a href="https://peps.python.org/pep-0695/"><code>PEP 695 - Type Parameter
+Syntax</code></a>!</p>
+<p>lets re-use the <code>make_pair</code> example from <a href="../defining-generics/"><code>defining-generics</code></a></p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">make_pair</span><span class="p">[</span><span class="n">T</span><span class="p">](</span><span class="n">x</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">]:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </span></code></pre></div>
-<ol>
-<li><code>int</code>s can be passed to where <code>float</code>s are expected</li>
-<li><code>bool</code> is a sublcass of <code>int</code>, so by liskov substitution principle, we can
-   use <code>bool</code>s where ints are expected</li>
-<li>note the <code>b</code> before the string literal: thats a byte string literal :d</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>in all of those cases, the type could be inferred (like, determined
-without you specifying it) by the type-checker, so providing it was a bit
-redundant.</p>
-</div>
-<p>those are some simple types that make up the values we use most of the time</p>
-<p>but, what about types that store other things? like lists, dictionaries?</p>
-<p>those actually have a type parameter, representing the things they store,
-although when not given, its kind of like saying that it could be anything.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]</span> <span class="c1"># (1)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># (2)</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="c1"># (3)</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># (4) </span>
+<p>why do we gotta write <code>tuple[T, T]</code>, if all we want is a "pair" of <code>T</code>'s? why dont we create a <code>Pair</code> type alias, such that <code>Pair[T]</code> is synonymous to <code>tuple[T, T]</code>?
+here's how we'd do it:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">type</span> <span class="n">Pair</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">]</span>
 </span></code></pre></div>
-<ol>
-<li>list of <code>Any</code>thing</li>
-<li>the <code>Type[OtherType]</code> is syntax for so called "generic" types: types that
-   have other types as parameters, in this case, this can be read as "<code>list</code> of
-   <code>int</code>s".</li>
-<li>there can be multiple type parameters, in dictionaries the first one is for
-   the type of keys, the second one is for values</li>
-<li>arbitrary length tuple of integers, the <code>...</code> can have some special meaning
-   in the context of typing</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>in the case of mutable collections (like <code>list</code>s), providing the type
-is not redundant: the type cannot be inferred, as you could have e.g. an
-empty <code>list</code>, that then later gets an <code>int</code> appended to it.</p>
-</div>
-<p>what about cases, where we want to represent that a variable / parameter could
-be of multiple types? for that, we can use union types:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-</span></code></pre></div>
-<p>how about typehinting arguments with values that default to <code>None</code> (common
-python practice)? well, just use a union of your argument type and <code>None</code>: by
-typecheckers, <code>None</code> is treated as the type of <code>None</code></p>
+<p>now, <code>Pair[T]</code> is (for typing purposes) exactly the same as <code>tuple[Any, Any]</code> (and <code>Pair</code> with no type argument is like <code>tuple[Any, Any]</code>, although in a later version of python we should be able to override the default types for type variables)</p>
 
 
 
