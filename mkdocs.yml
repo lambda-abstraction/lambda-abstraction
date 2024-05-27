@@ -6,6 +6,9 @@ nav:
   - python-typehints: 
     - introduction: python-typehints/index.md
     - builtin-types: python-typehints/builtin-types.md
+    - duck-typing: python-typehints/duck-typing.md
+    - defining-generics: python-typehints/defining-generics.md
+    - type-aliases: python-typehints/type-aliases.md
 theme:
   name: material
   palette:
