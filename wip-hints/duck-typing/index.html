@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://lambda-abstraction.github.io/lambda-abstraction/python-typehints/type-aliases/">
+        <link rel="canonical" href="https://lambda-abstraction.github.io/lambda-abstraction/wip-hints/duck-typing/">
       
       
-        <link rel="prev" href="../defining-generics/">
+        <link rel="prev" href="../">
       
-      
-        <link rel="next" href="../type-variable-bounds-and-constraints/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>type-aliases - lambda-abstraction</title>
+        <title>duck-typing - lambda-abstraction</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#type-alises" class="md-skip">
+        <a href="#duck-typing-collectionsabc-and-the-typing-rule" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              type-aliases
+              duck-typing
             
           </span>
         </div>
@@ -248,19 +246,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -274,10 +270,180 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             python-typehints
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-typehints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-typehints/builtin-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    builtin-types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-typehints/duck-typing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    duck-typing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-typehints/defining-generics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    defining-generics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-typehints/type-aliases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    type-aliases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-typehints/type-variable-bounds-and-constraints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    type-variable-bounds-and-constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    wip-hints
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            wip-hints
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -306,69 +472,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../builtin-types/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    builtin-types
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../duck-typing/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    duck-typing
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../defining-generics/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    defining-generics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -381,113 +484,18 @@
         
       
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    type-aliases
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../type-variable-bounds-and-constraints/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    type-variable-bounds-and-constraints
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
-    wip-hints
+    duck-typing
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            wip-hints
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../wip-hints/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    introduction
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../wip-hints/duck-typing/" class="md-nav__link">
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -496,6 +504,95 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#duck-typing" class="md-nav__link">
+    <span class="md-ellipsis">
+      duck typing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-be-looped-over-type-iterable" class="md-nav__link">
+    <span class="md-ellipsis">
+      "can be looped over" type - Iterable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#have-length-and-can-be-indexed-type-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      "have length and can be indexed" type - Sequence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-key-to-value-type-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      "from key to value" type - Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-be-called-with-those-parameters-and-return-this-value-type-callable" class="md-nav__link">
+    <span class="md-ellipsis">
+      "can be called with those parameters and return this value" type - Callable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=""can be called with those parameters and return this value" type - Callable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      protocols introduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-typing-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      the typing rule
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -528,6 +625,83 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#duck-typing" class="md-nav__link">
+    <span class="md-ellipsis">
+      duck typing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-be-looped-over-type-iterable" class="md-nav__link">
+    <span class="md-ellipsis">
+      "can be looped over" type - Iterable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#have-length-and-can-be-indexed-type-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      "have length and can be indexed" type - Sequence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-key-to-value-type-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      "from key to value" type - Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-be-called-with-those-parameters-and-return-this-value-type-callable" class="md-nav__link">
+    <span class="md-ellipsis">
+      "can be called with those parameters and return this value" type - Callable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=""can be called with those parameters and return this value" type - Callable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      protocols introduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-typing-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      the typing rule
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -544,20 +718,77 @@
   
 
 
-<h1 id="type-alises">type-alises</h1>
-<p>so.. sometimes, when we typehint our code, types can get a bit big and the code starts to look cluttered and its hard to write..
-wouldnt it be nice if we could define shorthands for types?</p>
-<p>and we can! using type aliases, and the <code>type</code> keyword-statement introduced with <a href="https://peps.python.org/pep-0695/"><code>PEP 695 - Type Parameter
-Syntax</code></a>!</p>
-<p>lets re-use the <code>make_pair</code> example from <a href="../defining-generics/"><code>defining-generics</code></a></p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">make_pair</span><span class="p">[</span><span class="n">T</span><span class="p">](</span><span class="n">x</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">]:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<h1 id="duck-typing-collectionsabc-and-the-typing-rule">duck typing, collections.abc and "the typing rule"</h1>
+<h2 id="duck-typing">duck typing</h2>
+<p>in a lot of cases, your parameter doesnt have to be strictly of some specific
+type, but rather of a type that supports some operation - like, having length,
+or being able to be iterated over. thats the idea behind "duck typing",
+supported in python through use of protocols and abstract base classes ("abcs")</p>
+<p>luckily, a lot of such types are defined in the standard
+<a href="https://docs.python.org/3/library/collections.abc.html"><code>collections.abc</code></a>
+module, for example:</p>
+<h2 id="can-be-looped-over-type-iterable">"can be looped over" type - Iterable</h2>
+<p>if you are implementing something like a <code>sum</code> function, the only thing you
+really want from the parameter is for you to be able to iterate (loop) over it
+and get numbers when doing so</p>
+<p>instead of using <code>list[float]</code>, you could use
+<a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence"><code>collections.abc.Iterable[float]</code></a>,
+then its valid to pass in anything thats an iterable of floats, be it a list of
+them, or something else - like a tuple, or a dict whose keys are floats.</p>
+<h2 id="have-length-and-can-be-indexed-type-sequence">"have length and can be indexed" type - Sequence</h2>
+<p>if you accept something that you expect to: have length, can be iterated over
+and indexed with an int (like a tuple, or a list) - use
+<a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence"><code>collections.abc.Sequence</code></a>
+if you also want that type to support being mutable (so, tuple wouldnt comply
+here anymore, only the list) - use
+<a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableSequence"><code>collections.abc.MutableSequence</code></a></p>
+<h2 id="from-key-to-value-type-mapping">"from key to value" type - Mapping</h2>
+<p>if you accept something that you expect to be like a dict, in the sense that it
+maps values of one type to another (like a dict) - use
+<a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping"><code>collections.abc.Mapping</code></a>
+(so, instead of a <code>dict[K, V]</code>, you'd use <code>Mapping[K, V]</code>) if you want it to
+be mutable - same story as with sequence, there is a
+<a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableMapping"><code>collections.abc.MutableMapping</code></a>
+type. generally, the immutable one is the "base case", and a mutable version is
+a special case with some additional methods</p>
+<h2 id="can-be-called-with-those-parameters-and-return-this-value-type-callable">"can be called with those parameters and return this value" type - Callable</h2>
+<p>sometimes, you accept things that can be called (like, other functions, commonly
+called "callbacks") as parameters. but what is their type? well, it might be a
+bunch of different types, as not only functions can be called, but anything with
+a properly defined <code>__call__</code> dunder method, the
+<a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable"><code>collections.abc.Callable</code></a>
+type helps you typehint those, the syntax is <code>Callable[[Arg1, ..., ArgN],
+ReturnType]</code>, so, for example, in:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="o">...</span>
 </span></code></pre></div>
-<p>why do we gotta write <code>tuple[T, T]</code>, if all we want is a "pair" of <code>T</code>'s? why dont we create a <code>Pair</code> type alias, such that <code>Pair[T]</code> is synonymous to <code>tuple[T, T]</code>?
-here's how we'd do it:</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">type</span> <span class="n">Pair</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">]</span>
+<p><code>Callable[[str, int], str]</code> could be used to represent the type of such a
+function.</p>
+<h3 id="protocols-introduction">protocols introduction</h3>
+<p>There is another option, to use
+<a href="https://peps.python.org/pep-0544/"><code>Protocols</code></a> and define the <code>__call__</code>
+method signature yourself, in which case you'd also be able to specify the names
+of parameters, making it more explanatory.</p>
+<p>so, continuing the example, it would be like:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Protocol</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">class</span> <span class="nc">Callback</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="o">...</span>
 </span></code></pre></div>
-<p>now, <code>Pair[T]</code> is (for typing purposes) exactly the same as <code>tuple[Any, Any]</code> (and <code>Pair</code> with no type argument is like <code>tuple[Any, Any]</code>, although in a later version of python we should be able to override the default types for type variables)</p>
+<p>as you could guess - this is usable not only with <code>__call__</code>, you can use this
+to define things like in <code>collections.abc</code> yourself :d</p>
+<div class="admonition resource">
+<p class="admonition-title">Resource</p>
+<p>for magic methods like <code>__call__</code> you can look into the
+<a href="https://docs.python.org/3/reference/datamodel.html"><code>python data model</code></a>
+page.</p>
+</div>
+<h2 id="the-typing-rule">the typing rule</h2>
+<p>overall, try to be generic in parameter types, so your functions will be usable
+with lots of different types and you wont need to convert everything to a
+concrete type just to pass the typechecker, and strict in return types, so it
+will be known exactly what is the result and what you can do with it</p>
 
 
 
