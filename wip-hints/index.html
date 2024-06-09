@@ -8,28 +8,26 @@
       
       
       
-        <link rel="canonical" href="https://lambda-abstraction.github.io/lambda-abstraction/python-typehints/builtin-types/">
+        <link rel="canonical" href="https://lambda-abstraction.github.io/lambda-abstraction/wip-hints/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../python-typehints/type-variable-bounds-and-constraints/">
       
       
-        <link rel="next" href="../duck-typing/">
       
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
     
     
       
-        <title>builtin-types - lambda-abstraction</title>
+        <title>introduction - lambda-abstraction</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -54,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#builtin-types" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="lambda-abstraction" class="md-header__button md-logo" aria-label="lambda-abstraction" data-md-component="logo">
+    <a href=".." title="lambda-abstraction" class="md-header__button md-logo" aria-label="lambda-abstraction" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              builtin-types
+              introduction
             
           </span>
         </div>
@@ -201,7 +199,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="lambda-abstraction" class="md-nav__button md-logo" aria-label="lambda-abstraction" data-md-component="logo">
+    <a href=".." title="lambda-abstraction" class="md-nav__button md-logo" aria-label="lambda-abstraction" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -231,7 +229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -248,19 +246,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -274,7 +270,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             python-typehints
@@ -288,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../python-typehints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -306,19 +302,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../python-typehints/builtin-types/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -327,7 +314,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -340,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../duck-typing/" class="md-nav__link">
+      <a href="../python-typehints/duck-typing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -361,7 +347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../defining-generics/" class="md-nav__link">
+      <a href="../python-typehints/defining-generics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -382,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../type-aliases/" class="md-nav__link">
+      <a href="../python-typehints/type-aliases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -403,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../type-variable-bounds-and-constraints/" class="md-nav__link">
+      <a href="../python-typehints/type-variable-bounds-and-constraints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -428,17 +414,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -452,7 +440,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             wip-hints
@@ -463,10 +451,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../wip-hints/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    introduction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -475,6 +483,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-typehints" class="md-nav__link">
+    <span class="md-ellipsis">
+      what are typehints?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-do-they-do-why-use-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      what do they do, why use them?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-do-they-dont-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      what do they dont do?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typehints-syntax-and-how-to-understand-what-is-meant-by-typehinted-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      typehints syntax, and how to understand what is meant by typehinted code?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-typehints-to-prevent-common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      using typehints to prevent common errors
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -507,6 +580,59 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-typehints" class="md-nav__link">
+    <span class="md-ellipsis">
+      what are typehints?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-do-they-do-why-use-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      what do they do, why use them?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-do-they-dont-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      what do they dont do?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typehints-syntax-and-how-to-understand-what-is-meant-by-typehinted-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      typehints syntax, and how to understand what is meant by typehinted code?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-typehints-to-prevent-common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      using typehints to prevent common errors
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -523,63 +649,72 @@
   
 
 
-<h1 id="builtin-types">builtin-types</h1>
-<p>so, what types are there even? what do the usual values we use correspond to in
-types?</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># (1)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">x</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">x</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span> 
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># (2) </span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">x</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;hi!&quot;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">x</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;hi!&quot;</span> <span class="c1"># (3) </span>
+<h1 id="introduction">introduction</h1>
+<h2 id="what-are-typehints">what are typehints?</h2>
+<p>typehints (or, type annotations) are a way of "hinting" (so, not enforced) to
+the reader of the code (which could be you, or another programmer, or a static
+analysis tool (a typechecker: this will be our best friend when dealing with
+types)) the <strong>type</strong> (like, <code>int</code>, <code>str</code>, <code>list</code>) of variables, function
+parameters and their return types, and attribute types (in classes).</p>
+<h2 id="what-do-they-do-why-use-them">what do they do, why use them?</h2>
+<p>when developing, they help with formalizing what values you are going to work
+with, and make it explicit, rather than just "thinking" (or, commenting, or
+putting it in the name of a variable, e.g. <code>things_list</code>) that e.g. your
+function parameter should be a list and it will return a list back, and, in most
+cases, given enough annotations typecheckers can prove that your program without
+you even needing to run it, so you wont have nasty runtime type-errors, like
+adding an int to a string, or somehing more complicated that wont be deducible
+from an error traceback :d</p>
+<p>when using something thats typehinted they help with knowing what values to,
+lets say, pass to a function, and what you'll get back, instead of guessing or
+needing to open up documentation.</p>
+<h2 id="what-do-they-dont-do">what do they dont do?</h2>
+<p>sadly or not, typehints on their own do not impact code performance or make type
+errors impossible. they are more like fancy comments in that sense, although
+they can be inspected by code, and sometimes that makes great api's, like
+dataclasses, to make good use of them you need to use a typechecker. there are 2
+main ones: mypy and pyright, and a lot of editors have integration for them, for
+example if you are using vscode - the pylance extension will bring the pyright
+typechecker and some additional features, just dont forget to enable the
+typechecking mode in settings (maybe a screenshot here? pyright &gt; analysis &gt;
+typechecking mode)</p>
+<h2 id="typehints-syntax-and-how-to-understand-what-is-meant-by-typehinted-code">typehints syntax, and how to understand what is meant by typehinted code?</h2>
+<p>the syntax for them at the moment of python 3.12 is:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">variable_name</span><span class="p">:</span> <span class="n">VariableType</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameter</span><span class="p">:</span> <span class="n">ParameterType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ReturnType</span><span class="p">:</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="o">...</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">class</span> <span class="nc">ClassName</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">attribute_name</span><span class="p">:</span> <span class="n">AttributeType</span>
 </span></code></pre></div>
-<ol>
-<li><code>int</code>s can be passed to where <code>float</code>s are expected</li>
-<li><code>bool</code> is a sublcass of <code>int</code>, so by liskov substitution principle, we can
-   use <code>bool</code>s where ints are expected</li>
-<li>note the <code>b</code> before the string literal: thats a byte string literal :d</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>in all of those cases, the type could be inferred (like, determined
-without you specifying it) by the type-checker, so providing it was a bit
-redundant.</p>
-</div>
-<p>those are some simple types that make up the values we use most of the time</p>
-<p>but, what about types that store other things? like lists, dictionaries?</p>
-<p>those actually have a type parameter, representing the things they store,
-although when not given, its kind of like saying that it could be anything.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]</span> <span class="c1"># (1)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># (2)</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="c1"># (3)</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># (4) </span>
+<p>so, what meaning does this have in practice? well, its kind of like an unsigned
+contract that:</p>
+<ul>
+<li><code>variable_name</code> is believed to have a value of type <code>VariableType</code></li>
+<li><code>function_name</code> was designed to work when you call it with an argument of type
+  <code>ParameterType</code>, and is supposed to return a value of type <code>ReturnType</code></li>
+<li>instances of the <code>ClassName</code> class should have an attribute <code>attribute_name</code>
+  with a value of type <code>AttributeType</code></li>
+</ul>
+<h2 id="using-typehints-to-prevent-common-errors">using typehints to prevent common errors</h2>
+<p>lets say you are making a function <code>f</code> for performing some calculations, like</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
 </span></code></pre></div>
-<ol>
-<li>list of <code>Any</code>thing</li>
-<li>the <code>Type[OtherType]</code> is syntax for so called "generic" types: types that
-   have other types as parameters, in this case, this can be read as "<code>list</code> of
-   <code>int</code>s".</li>
-<li>there can be multiple type parameters, in dictionaries the first one is for
-   the type of keys, the second one is for values</li>
-<li>arbitrary length tuple of integers, the <code>...</code> can have some special meaning
-   in the context of typing</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>in the case of mutable collections (like <code>list</code>s), providing the type
-is not redundant: the type cannot be inferred, as you could have e.g. an
-empty <code>list</code>, that then later gets an <code>int</code> appended to it.</p>
-</div>
-<p>what about cases, where we want to represent that a variable / parameter could
-be of multiple types? for that, we can use union types:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<p>and then you want to make the program interactive and call that function with
+the user input, like <code>f(input())</code>, but then, when running the code, oops..
+there is a type error. if only we could prevent that.. and we can! using
+typehints and a typechecker, we could typehint that in the function <code>f</code> the
+parameter <code>x</code> should be a <code>float</code>, like so:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
 </span></code></pre></div>
-<p>how about typehinting arguments with values that default to <code>None</code> (common
-python practice)? well, just use a union of your argument type and <code>None</code>: by
-typecheckers, <code>None</code> is treated as the type of <code>None</code></p>
+<p>then, if we do just <code>f(input())</code> - our typechecker would be angry at us, and for
+good reason! <code>input()</code> returns a <code>str</code>, and a <code>str</code> is not a <code>float</code>, so
+it prevents us from making a type error, and now in all cases when we call our
+function - it will help us match the argument type so we wont get an error when
+actually running our code</p>
 
 
 
@@ -626,12 +761,12 @@ typecheckers, <code>None</code> is treated as the type of <code>None</code></p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
