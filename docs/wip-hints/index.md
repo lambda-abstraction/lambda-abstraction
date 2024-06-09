@@ -69,9 +69,11 @@ def f(x):
 
 and then you want to make the program interactive and call that function with
 the user input, like ``f(input())``, but then, when running the code, oops..
-there is a type error. if only we could prevent that.. and we can! using
-typehints and a typechecker, we could typehint that in the function `f` the
-parameter `x` should be a `float`, like so:
+there is a type error: "can only concatenate str (not "int") to str". if only we
+could prevent such errors without needing to run the code, as in a lot of cases,
+the types of values **can** be known.. and we can! using typehints and a
+typechecker, we could typehint that in the function `f` the parameter `x` should
+be a `float`, like so:
 
 ```python
 def f(x: float):
@@ -83,3 +85,61 @@ good reason! ``input()`` returns a ``str``, and a ``str`` is not a ``float``, so
 it prevents us from making a type error, and now in all cases when we call our
 function - it will help us match the argument type so we wont get an error when
 actually running our code
+
+## a bit about type inference
+
+so, now that we know that we can typehint our variables wiht ``variable_name:
+VariableType = value``, should we **always** do that? even when its, lets say,
+``x: int = 42``, isnt that "obvious" that 42 is an int? well, yes it is! for
+literals (like, ``1``, ``1.5``, ``"string"``), or expressions that "obviously"
+evaluate to a certain type (like, calling a typehinted function, or accessing an
+attribute thats typehinted) - typecheckers can infer the type without you
+needing to specify it
+
+## kind-of a cheatsheet/example of builtins and simplest generics
+
+so, what are some simple types we can use in typehints that we work with in
+almost every program?
+
+```python
+x: int = 1
+x: float = 1.0
+x: bool = True
+x: str = "hello!"
+x: bytes = b"hello!" # note the b""
+```
+
+what about storing "multiple things" in a variable, like what we use lists,
+dicts, sets, tuples for? can we specify that we have a list where values are of
+a specific type? yes we can!
+
+```python
+xs: list[int] = [1, 2, 3]
+xs: set[int] = {1, 2, 3}
+data: dict[str, int] = {"x": 0, "y": 1} # there can be multiple type parameters, in the case of dict, the first one is for the type of the keys, the second is for the values
+xyz: tuple[int, int, int] = (1, 2, 3) # in tuples, we can even specify the type of each value separately!
+xs: tuple[int, ...] = (0, 1, 2, 3) # in the context of typing, `...` can mean special things. for tuples, tuple[SomeType, ...] means a tuple of arbitrary size 
+```
+
+those types can be used without specifying a type parameter, but that way you
+lose a lot of information and what we use typehints for, so some typecheckers
+will even report that.
+
+## the empty collection literal type inference problem
+
+remember about "type inference", and that the typechecker can infer the type for
+literals? well, thats true, but in the case of collections: like lists, dicts,
+sets, ..., how would it know the type of an empty collection literal, like
+``[]`` (an empty list)? so in that case, you should specify the type, like:
+
+```python
+numbers: list[float] = []
+```
+
+## subtypes / subclasses
+
+so, does ``x: Type`` mean that ``x`` can only be of that specific type ``Type``?
+well, not really. for example, booleans (``True`` and ``False``) can also be
+used where ``int``'s are used, because the ``bool`` type is a subclass of
+``int`` (if you are familiar with inheritance, its kinda like, ``class
+bool(int):``), so ``x: int = True`` is perfectly valid.
