@@ -10,6 +10,8 @@ nav:
     - defining-generics: python-typehints/defining-generics.md
     - type-aliases: python-typehints/type-aliases.md
     - type-variable-bounds-and-constraints: python-typehints/type-variable-bounds-and-constraints.md
+  - wip-hints:
+    - introduction: wip-hints/index.md
 theme:
   name: material
   palette:
