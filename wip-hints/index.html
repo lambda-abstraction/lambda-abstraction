@@ -544,6 +544,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#a-bit-about-type-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      a bit about type inference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kind-of-a-cheatsheetexample-of-builtins-and-simplest-generics" class="md-nav__link">
+    <span class="md-ellipsis">
+      kind-of a cheatsheet/example of builtins and simplest generics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-empty-collection-literal-type-inference-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      the empty collection literal type inference problem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subtypes-subclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      subtypes / subclasses
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -631,6 +667,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#a-bit-about-type-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      a bit about type inference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kind-of-a-cheatsheetexample-of-builtins-and-simplest-generics" class="md-nav__link">
+    <span class="md-ellipsis">
+      kind-of a cheatsheet/example of builtins and simplest generics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-empty-collection-literal-type-inference-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      the empty collection literal type inference problem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subtypes-subclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      subtypes / subclasses
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -661,10 +733,10 @@ parameters and their return types, and attribute types (in classes).</p>
 with, and make it explicit, rather than just "thinking" (or, commenting, or
 putting it in the name of a variable, e.g. <code>things_list</code>) that e.g. your
 function parameter should be a list and it will return a list back, and, in most
-cases, given enough annotations typecheckers can prove that your program without
-you even needing to run it, so you wont have nasty runtime type-errors, like
-adding an int to a string, or somehing more complicated that wont be deducible
-from an error traceback :d</p>
+cases, given enough annotations typecheckers can prove that your program wont
+have nasty runtime type-errors, like adding an int to a string, or somehing more
+complicated that wont be deducible from an error traceback, without you needing
+to actually run the code.</p>
 <p>when using something thats typehinted they help with knowing what values to,
 lets say, pass to a function, and what you'll get back, instead of guessing or
 needing to open up documentation.</p>
@@ -704,9 +776,11 @@ contract that:</p>
 </span></code></pre></div>
 <p>and then you want to make the program interactive and call that function with
 the user input, like <code>f(input())</code>, but then, when running the code, oops..
-there is a type error. if only we could prevent that.. and we can! using
-typehints and a typechecker, we could typehint that in the function <code>f</code> the
-parameter <code>x</code> should be a <code>float</code>, like so:</p>
+there is a type error: "can only concatenate str (not "int") to str". if only we
+could prevent such errors without needing to run the code, as in a lot of cases,
+the types of values <strong>can</strong> be known.. and we can! using typehints and a
+typechecker, we could typehint that in the function <code>f</code> the parameter <code>x</code> should
+be a <code>float</code>, like so:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
 </span></code></pre></div>
@@ -715,6 +789,48 @@ good reason! <code>input()</code> returns a <code>str</code>, and a <code>str</c
 it prevents us from making a type error, and now in all cases when we call our
 function - it will help us match the argument type so we wont get an error when
 actually running our code</p>
+<h2 id="a-bit-about-type-inference">a bit about type inference</h2>
+<p>so, now that we know that we can typehint our variables wiht <code>variable_name:
+VariableType = value</code>, should we <strong>always</strong> do that? even when its, lets say,
+<code>x: int = 42</code>, isnt that "obvious" that 42 is an int? well, yes it is! for
+literals (like, <code>1</code>, <code>1.5</code>, <code>"string"</code>), or expressions that "obviously"
+evaluate to a certain type (like, calling a typehinted function, or accessing an
+attribute thats typehinted) - typecheckers can infer the type without you
+needing to specify it</p>
+<h2 id="kind-of-a-cheatsheetexample-of-builtins-and-simplest-generics">kind-of a cheatsheet/example of builtins and simplest generics</h2>
+<p>so, what are some simple types we can use in typehints that we work with in
+almost every program?</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">x</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">x</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">x</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;hello!&quot;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">x</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;hello!&quot;</span> <span class="c1"># note the b&quot;&quot;</span>
+</span></code></pre></div>
+<p>what about storing "multiple things" in a variable, like what we use lists,
+dicts, sets, tuples for? can we specify that we have a list where values are of
+a specific type? yes we can!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="c1"># there can be multiple type parameters, in the case of dict, the first one is for the type of the keys, the second is for the values</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">xyz</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># in tuples, we can even specify the type of each value separately!</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">xs</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># in the context of typing, `...` can mean special things. for tuples, tuple[SomeType, ...] means a tuple of arbitrary size </span>
+</span></code></pre></div>
+<p>those types can be used without specifying a type parameter, but that way you
+lose a lot of information and what we use typehints for, so some typecheckers
+will even report that.</p>
+<h2 id="the-empty-collection-literal-type-inference-problem">the empty collection literal type inference problem</h2>
+<p>remember about "type inference", and that the typechecker can infer the type for
+literals? well, thats true, but in the case of collections: like lists, dicts,
+sets, ..., how would it know the type of an empty collection literal, like
+<code>[]</code> (an empty list)? so in that case, you should specify the type, like:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">numbers</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span></code></pre></div>
+<h2 id="subtypes-subclasses">subtypes / subclasses</h2>
+<p>so, does <code>x: Type</code> mean that <code>x</code> can only be of that specific type <code>Type</code>?
+well, not really. for example, booleans (<code>True</code> and <code>False</code>) can also be
+used where <code>int</code>'s are used, because the <code>bool</code> type is a subclass of
+<code>int</code> (if you are familiar with inheritance, its kinda like, <code>class
+bool(int):</code>), so <code>x: int = True</code> is perfectly valid.</p>
 
 
 
